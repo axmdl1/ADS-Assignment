@@ -29,6 +29,7 @@ public class Main {
                 break;
             }
 
+            long startTime = System.currentTimeMillis();
             switch (choice){
                 case 1:
                     Task1();
@@ -65,6 +66,10 @@ public class Main {
                     break;
 
             }
+
+            double endTime = System.currentTimeMillis();
+            double duration = (endTime - startTime) / 1000000;
+            System.out.println("Time: " + duration + " ms");
         }
     }
 
@@ -173,6 +178,12 @@ public class Main {
         System.out.println("Result: " + GCD(a,b));
     }
 
+    /**
+     * This code calculating greatest common denominator (GCD) of two numbers recursively.
+     * @param a The 1st integer.
+     * @param b The 2nd integer.
+     * @return The GCD of a and b.
+     */
     private static int GCD(int a, int b){
         if (b == 0)
             return a;
@@ -180,6 +191,14 @@ public class Main {
         return GCD(b, a % b);
     }
 
+    /**
+     * Calculating binomial coefficient.
+     * Using recursive approach.
+     * Formula n! / (k! * (n - k)!).
+     * @param n Total number.
+     * @param k The number of items to choose.
+     * @return Binomial coefficient, C(n, k).
+     */
     private static int binomialCoef(int n, int k){
         if (k == 0 || n == k)
             return 1;
@@ -187,6 +206,11 @@ public class Main {
         return factorial(n) / (factorial(k) * factorial(n - k));
     }
 
+    /**
+     * This code will check String for only digits recursively.
+     * @param str The string which to check.
+     * @return Yes if the string consists only digits, otherwise NO.
+     */
     private static String isDigit(String str){
         if(str.length() == 0)
             return "Yes";
@@ -197,6 +221,12 @@ public class Main {
             return "No";
     }
 
+    /**
+     * This code reverse the given array, swaps start and end.
+     * @param arr The array.
+     * @param start The starting index.
+     * @param end The ending index.
+     */
     private static void reverseOrder(int[] arr, int start, int end){
         if (start >= end)
             return;
@@ -207,6 +237,13 @@ public class Main {
         reverseOrder(arr, start + 1, end - 1);
     }
 
+    /**
+     * Calculates the power of a number recursively.
+     * a^n, a to the power n.
+     * @param a basic number.
+     * @param n power.
+     * @return The result of a to the power n.
+     */
     private static int toPower(int a, int n){
         if(n == 0)
             return 1;
@@ -214,6 +251,12 @@ public class Main {
             return a * toPower(a, n - 1);
     }
 
+    /**
+     * This code calculates nth Fibonacci number.
+     * It uses recursive approach.
+     * @param n The index of the Fibonacci number.
+     * @return The nth Fibonacci number.
+     */
     private static int fibonacci(int n){
         if (n <= 1 )
             return n; // F0 = 0 and F1 = 1 base case
@@ -221,6 +264,12 @@ public class Main {
             return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
+    /**
+     * Calculates the factorial of a given number.
+     * Although this method calculates the factorial of non-negative number.
+     * @param n The number for calculation factorial.
+     * @return The factorial of a given number.
+     */
     private static int factorial(int n){
         if (n <= 1)
             return 1;
@@ -228,6 +277,10 @@ public class Main {
             return n * factorial(n - 1);
     }
 
+    /**
+     * This code checks if a number is a prime.
+     * @param n Number.
+     */
     private static void isPrime(int n){
         if(n % 2 == 0){
             System.out.println(n + " Composite");
@@ -237,6 +290,11 @@ public class Main {
         }
     }
 
+    /**
+     * This code calculates the average of elements in the array.
+     * @param n The number of elements in the array.
+     * @param arr Array.
+     */
     private static void averageOfArr(int n, int[] arr){
         double sum = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -247,7 +305,11 @@ public class Main {
         System.out.println("Result: " + average);
     }
 
-
+    /**
+     * This block of code about searching minimum digit in the array.
+     * @param arr This is array.
+     * @return The minimum element in the array.
+    **/
     private static void findMin(int[] arr) {
         int min = arr[0];
         for (int i = 1; i < arr.length; i++) {
