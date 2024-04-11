@@ -1,12 +1,11 @@
 import java.util.Scanner;
 
 public class Main {
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        boolean exit = false;
 
         // Main loop to display task menu
-        while (!exit) {
+        while (true) {
             System.out.println("************************************");
             System.out.println("Task 1");
             System.out.println("Task 2");
@@ -29,7 +28,6 @@ public class Main {
                 break;
             }
 
-            long startTime = System.currentTimeMillis();
             switch (choice){
                 case 1:
                     Task1();
@@ -66,15 +64,10 @@ public class Main {
                     break;
 
             }
-
-            double endTime = System.currentTimeMillis();
-            double duration = (endTime - startTime) / 1000000;
-            System.out.println("Time: " + duration + " ms");
         }
     }
 
     private static void Task1() {
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter size of array: ");
         int n = sc.nextInt();
         int[] arr = new int[n];
@@ -84,11 +77,15 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
+        double startTime = System.currentTimeMillis();
+
         findMin(arr);
+
+        double endTime = System.currentTimeMillis();
+        System.out.println("Time: " + (endTime - startTime) + " ms");
     }
 
     private static void Task2(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter size of array:");
         int n = sc.nextInt();
         int[] arr = new int[n];
@@ -98,43 +95,65 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
+        double startTime = System.currentTimeMillis();
+
         averageOfArr(n, arr);
+
+        double endTime = System.currentTimeMillis();
+        System.out.println("Time: " + (endTime - startTime) + " ms");
     }
 
     private static void Task3(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter number for task:");
         int n = sc.nextInt();
 
+        double startTime = System.currentTimeMillis();
+
         isPrime(n);
+
+        double endTime = System.currentTimeMillis();
+        System.out.println("Time: " + (endTime - startTime) + " ms");
     }
 
     private static void Task4(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter a factorial number!");
         int n = sc.nextInt();
 
+        double startTime = System.currentTimeMillis();
+
         System.out.println("Result: " + factorial(n));
+
+        double endTime = System.currentTimeMillis();
+        System.out.println("Time: " + (endTime - startTime) + " ms");
     }
 
     private static void Task5(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter n-th fibonacci number:");
         int n = sc.nextInt();
+        double startTime = System.currentTimeMillis();
+
         System.out.println("Result: " + fibonacci(n));
+
+        double endTime = System.currentTimeMillis();
+        System.out.println("Time: " + (endTime - startTime) + " ms");
     }
 
     private static void Task6(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number:");
         int a = sc.nextInt();
         System.out.println("Enter power:");
         int n = sc.nextInt();
+
+        double startTime = System.currentTimeMillis();
+
         System.out.println("Result: " + toPower(a,n));
+
+        double endTime = System.currentTimeMillis();
+        System.out.println("Time: " + (endTime - startTime) + " ms");
+
     }
 
     private static void Task7(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter size of array:");
         int n = sc.nextInt();
         int[] arr = new int[n];
@@ -144,7 +163,13 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
+        double startTime = System.currentTimeMillis();
+
         reverseOrder(arr, 0, arr.length - 1);
+
+        double endTime = System.currentTimeMillis();
+        System.out.println("Time: " + (endTime - startTime) + " ms");
+
 
         System.out.println("Result: ");
         for(int num : arr){
@@ -153,29 +178,43 @@ public class Main {
     }
 
     private static void Task8(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter string:");
         String s = sc.nextLine();
+
+        double startTime = System.currentTimeMillis();
+
         System.out.println("Result: " + isDigit(s));
+
+        double endTime = System.currentTimeMillis();
+        System.out.println("Time: " + (endTime - startTime) + " ms");
     }
 
     private static void Task9(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter 1st number:");
         int n = sc.nextInt();
         System.out.println("Enter 2nd number:");
         int k = sc.nextInt();
+
+        double startTime = System.currentTimeMillis();
+
         System.out.println("Result: " + binomialCoef(n, k));
+
+        double endTime = System.currentTimeMillis();
+        System.out.println("Time: " + (endTime - startTime) + " ms");
     }
 
     private static void Task10(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter 1st number:");
         int a = sc.nextInt();
         System.out.println("Enter 2nd number:");
         int b = sc.nextInt();
 
+        double startTime = System.currentTimeMillis();
+
         System.out.println("Result: " + GCD(a,b));
+
+        double endTime = System.currentTimeMillis();
+        System.out.println("Time: " + (endTime - startTime) + " ms");
     }
 
     /**
